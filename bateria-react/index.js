@@ -20,9 +20,9 @@ const criarDiv = (texto) => {
     document.getElementById('container').appendChild(div);
 }
 
-const exibir = (sons) => Object.keys(sons).forEach(criarDiv);
+const display = (sons) => Object.keys(sons).forEach(criarDiv);
 
-const tocarSom = (letra) => {
+const playSound = (letra) => {
     const audio = new Audio(`./sounds/${sons[letra]}`);
     audio.play();
 }
@@ -30,7 +30,7 @@ const tocarSom = (letra) => {
 const addEffect = (letra) => document.getElementById(letra)
                                            .classList.toggle('active');
 
-const removerEfeito = (letra) => {
+const removeEffect = (letra) => {
     const div = document.getElementById(letra);
     const removeActive = () => div.classList.remove('active');
     div.addEventListener('transitionend',removeActive);
@@ -43,13 +43,13 @@ const activateDiv = (evento) => {
     const letraPermitida = sons.hasOwnProperty(letra);
     if (letraPermitida){
         addEffect(letra);
-        tocarSom(letra);
-        removerEfeito(letra);
+        playSound(letra);
+        removeEffect(letra);
     }
 }
 
 
-exibir(sons);
+display(sons);
 document.getElementById('container')
         .addEventListener('click', activateDiv);
 

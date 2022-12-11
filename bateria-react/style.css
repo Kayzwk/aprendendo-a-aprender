@@ -18,7 +18,7 @@ main{
 }
 
 .title{
-    color: #ffcc00;
+    color: #0cefff;
     margin: 20vh auto;
     font-size: calc(5vw + 20px);
     text-shadow: 0 0 10px black,
@@ -43,9 +43,9 @@ main{
     align-items: center;
     justify-content: center;
     background-color: #000000BB;
-    color: white;
+    color: #d30000;
     font-size: calc(3vw + 20px);
-    border: 3px solid white;
+    border: 3px solid #b40303;
     user-select: none;
     cursor: pointer;
     transition: transform .2s;

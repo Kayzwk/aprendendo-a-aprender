@@ -27,7 +27,7 @@ const tocarSom = (letra) => {
     audio.play();
 }
 
-const adicionarEfeito = (letra) => document.getElementById(letra)
+const addEffect = (letra) => document.getElementById(letra)
                                            .classList.toggle('active');
 
 const removerEfeito = (letra) => {
@@ -36,13 +36,13 @@ const removerEfeito = (letra) => {
     div.addEventListener('transitionend',removeActive);
 };
 
-const ativarDiv = (evento) => {
+const activateDiv = (evento) => {
 
     const letra = evento.type == 'click' ? evento.target.id : evento.key.toUpperCase();
     
     const letraPermitida = sons.hasOwnProperty(letra);
     if (letraPermitida){
-        adicionarEfeito(letra);
+        addEffect(letra);
         tocarSom(letra);
         removerEfeito(letra);
     }
@@ -51,6 +51,6 @@ const ativarDiv = (evento) => {
 
 exibir(sons);
 document.getElementById('container')
-        .addEventListener('click', ativarDiv);
+        .addEventListener('click', activateDiv);
 
-window.addEventListener('keyup',ativarDiv);
+window.addEventListener('keyup',activateDiv);
